@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="bootstrap2/css/addpayment.css">
+</head>
+
+
+<body>
+<div class="container bootstrap snippet">
+    <div class="row">
+      <div class="col-sm-10"><h1><strong>Aggiungi metodo di pagamento</strong></h1></div>
+       <form action="ViewAdList" method="post" class="mx-5">
+       	<input type="image" src= "bootstrap2/resources/icon1_black.png" width="60" height="60" class="pull-right">
+      </form>
+    </div>
+	
+	<hr>
+    <div class="row">
+  		<div class="col-sm-3"><!--left col-->
+                         
+        </div><!--/col-3-->
+    	<div class="col-sm-3"> <!-- cambiare per centrare il form-->
+
+          <div class="tab-content">
+            <div class="tab-pane active" id="home">
+       		<form class="form" method="post" action="AddNewPaymentMethod" id="aggiungi-metodo">
+
+				<div class="container">
+				    <div class="row">
+				        <div class="col-xs-12 col-md-4">
+				            <div class="panel panel-default">
+				                <div class="panel-heading">
+				                    <h3 class="panel-title">
+				                        Dettagli pagamento
+				                    </h3>
+				                </div>
+				                <div class="panel-body">
+				                   					
+									 <div class="form-group">
+				                        <label for="cardNumber">
+				                            INTESTATARIO CARTA</label>
+				                        <div class="input-group">
+				                            <input type="text" class="form-control" id="owner" name="owner" placeholder="Inserisci intestatario carta" required autofocus />       
+				                        </div>
+				                    </div>	
+				                    <div class="form-group">
+				                        <label for="cardNumber">
+				                            NUMERO CARTA</label>
+				                        <div class="input-group">
+				                            <input type="text" class="form-control" id="cardNumber" name="cardNumber" maxlength="16" placeholder="Inserisci un numero di carta valido"
+				                                required autofocus />
+				                            <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+				                        </div>
+				                    </div>
+				                    <div class="row">
+				                        <div class="col-xs-7 col-md-7">
+				                            <div class="form-group">
+				                                <label for="expityMonth">
+				                                    DATA SCADENZA</label>
+				                                <div class="col-xs-6 col-lg-6 pl-ziro">
+				                                    <input type="text" class="form-control" id="expiryMonth" name="expiryMonth" placeholder="MM" required />
+				                                </div>
+				                                <div class="col-xs-6 col-lg-6 pl-ziro">
+				                                    <input type="text" class="form-control" id="expiryYear" name="expiryYear" placeholder="YY" required /></div>
+				                            </div>
+				                        </div>
+				                        <div class="col-xs-5 col-md-5 pull-right">
+				                            <div class="form-group">
+				                                <label for="cvCode">
+				                                    CODICE CV</label>
+				                                <input type="password" class="form-control" id="cvCode" name="cvc" placeholder="CVC" maxlength="3" required />
+				                            </div>
+				                        </div>
+				                    </div>
+				                  
+				                </div>
+				            </div>
+				            <br/>
+				            <button class="btn btn-success btn-lg btn-block" type="submit">Aggiungi</button>
+				           
+				        </div>
+				    </div>
+				</div>
+									  
+				              	</form>
+              
+             </div><!--/tab-pane-->
+             
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+	<hr>
+</body>
+                                                      

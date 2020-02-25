@@ -1,0 +1,309 @@
+<!-- <!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+-->
+
+<!-- <?xml version="1.0" encoding="UTF-8"?> -->
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+ 
+	<servlet>
+  		<servlet-name>GetAdInfo</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.GetAdInfo</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>GetAdInfo</servlet-name>
+  		<url-pattern>/GetAdInfo</url-pattern>
+	 </servlet-mapping>	 
+	 
+	 <servlet>
+  		<servlet-name>ReviewAd</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ReviewAd</servlet-class>
+ 	 </servlet>
+ 	
+ 	 <servlet-mapping>
+ 	 	<servlet-name>ReviewAd</servlet-name>
+  		<url-pattern>/reviewAdd</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>ViewCart</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewCart</servlet-class>
+ 	 </servlet>
+ 	
+ 	 <servlet-mapping>
+ 	 	<servlet-name>ViewCart</servlet-name>
+  		<url-pattern>/cart</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet-mapping>
+ 	 	<servlet-name>ViewCart</servlet-name>
+  		<url-pattern>/ViewCart</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>ViewAdList</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewAdList</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ViewAdList</servlet-name>
+  		<url-pattern>/ViewAdList</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>ManageCart</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ManageCart</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ManageCart</servlet-name>
+  		<url-pattern>/ManageCart</url-pattern>
+	 </servlet-mapping>
+	 
+	  <servlet>
+  		<servlet-name>Checkout</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.Checkout</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>Checkout</servlet-name>
+  		<url-pattern>/checkout</url-pattern>
+	 </servlet-mapping>
+	 
+	<servlet>
+  		<servlet-name>ViewCheckout</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewCheckout</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ViewCheckout</servlet-name>
+  		<url-pattern>/ViewCheckout</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>AddNewPaymentMethod</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.AddNewPaymentMethod</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>AddNewPaymentMethod</servlet-name>
+  		<url-pattern>/AddNewPaymentMethod</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>CreateNewAdvertisement</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.CreateNewAdvertisement</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>CreateNewAdvertisement</servlet-name>
+  		<url-pattern>/CreateNewAdvertisement</url-pattern>
+	 </servlet-mapping>
+	 
+	  <servlet>
+  		<servlet-name>ViewModifyAd</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewModifyAd</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ViewModifyAd</servlet-name>
+  		<url-pattern>/ViewModifyAd</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>ModifyAdvertisement</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ModifyAdvertisement</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ModifyAdvertisement</servlet-name>
+  		<url-pattern>/ModifyAdvertisement</url-pattern>
+	 </servlet-mapping>
+	 
+	  <servlet>
+  		<servlet-name>addMyPurchased</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.addMyPurchased</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>addMyPurchased</servlet-name>
+  		<url-pattern>/addMyPurchased</url-pattern>
+	 </servlet-mapping>
+	 
+	  <servlet>
+  		<servlet-name>addMyAdvertisement</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.addMyAdvertisement</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>addMyAdvertisement</servlet-name>
+  		<url-pattern>/addMyAdvertisement</url-pattern>
+	 </servlet-mapping>
+	 
+	  <servlet>
+  		<servlet-name>ViewProfileServlet</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewProfileServlet</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ViewProfileServlet</servlet-name>
+  		<url-pattern>/ViewProfileServlet</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>ModifyUserImage</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ModifyUserImage</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ModifyUserImage</servlet-name>
+  		<url-pattern>/ModifyUserImage</url-pattern>
+	 </servlet-mapping>
+	 
+	  <servlet>
+  		<servlet-name>ModifyUserServlet</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ModifyUserServlet</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ModifyUserServlet</servlet-name>
+  		<url-pattern>/ModifyUserServlet</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>LoginServlet</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.LoginServlet</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>LoginServlet</servlet-name>
+  		<url-pattern>/LoginServlet</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>TwoFactorAutenticationServlet</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.TwoFactorAutenticationServlet</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>TwoFactorAutenticationServlet</servlet-name>
+  		<url-pattern>/TwoFactorAutenticationServlet</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>RegisterServlet</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.RegisterServlet</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>RegisterServlet</servlet-name>
+  		<url-pattern>/RegisterServlet</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>LogoutServlet</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.LogoutServlet</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>LogoutServlet</servlet-name>
+  		<url-pattern>/LogoutServlet</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>GoogleLogin</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.GoogleLogin</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>GoogleLogin</servlet-name>
+  		<url-pattern>/GoogleLogin</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>ViewProfileDiagrams</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewProfileDiagrams</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ViewProfileDiagrams</servlet-name>
+  		<url-pattern>/viewProfileDiagrams</url-pattern>
+	 </servlet-mapping>
+	 
+	  <servlet>
+  		<servlet-name>ViewProfileDiagramsSecond</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewProfileDiagramsSecond</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ViewProfileDiagramsSecond</servlet-name>
+  		<url-pattern>/viewProfileDiagramsSecond</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>Autocomplete</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.Autocomplete</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>Autocomplete</servlet-name>
+  		<url-pattern>/Autocomplete</url-pattern>
+	 </servlet-mapping>
+	 
+	 <servlet>
+  		<servlet-name>GetBundleInfo</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.GetBundleInfo</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>GetBundleInfo</servlet-name>
+  		<url-pattern>/GetBundleInfo</url-pattern>
+	 </servlet-mapping>	 
+	 
+	  <servlet>
+  		<servlet-name>ViewMyBundle</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewMyBundle</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ViewMyBundle</servlet-name>
+  		<url-pattern>/ViewMyBundle</url-pattern>
+	 </servlet-mapping>	 
+	 
+	 <servlet>
+  		<servlet-name>RemoveMyBundle</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.RemoveMyBundle</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>RemoveMyBundle</servlet-name>
+  		<url-pattern>/RemoveMyBundle</url-pattern>
+	 </servlet-mapping>	 
+	 
+	 <servlet>
+  		<servlet-name>CreateBundle</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.CreateBundle</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>CreateBundle</servlet-name>
+  		<url-pattern>/CreateBundle</url-pattern>
+	 </servlet-mapping>	 
+	 
+	  <servlet>
+  		<servlet-name>ViewSummaryProfile</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.ViewSummaryProfile</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>ViewSummaryProfile</servlet-name>
+  		<url-pattern>/ViewSummaryProfile</url-pattern>
+	 </servlet-mapping>
+	 
+</web-app>
+
+

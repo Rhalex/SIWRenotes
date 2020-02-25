@@ -1,0 +1,19 @@
+#rounded-div {
+  border-radius: 15px 50px;
+  /*border: 1px solid #454545;*/
+  background-color: #BCBCBC;
+  padding: 20px; 
+  min-width: 100%;
+  min-height: 240px;  
+}
+
+#div-button {
+  padding: 20px;
+  display: inline-block;
+  margin-top: 40px;
+  margin-left: 300px;
+}
+
+#botton-padding {
+	padding: 4px;
+}
