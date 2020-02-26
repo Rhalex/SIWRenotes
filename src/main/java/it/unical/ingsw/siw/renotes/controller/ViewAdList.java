@@ -32,7 +32,7 @@ public class ViewAdList extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("GET");
+		
 		String subject = req.getParameter("materia");
 		String title = req.getParameter("titolo");
 		String university = req.getParameter("universita");

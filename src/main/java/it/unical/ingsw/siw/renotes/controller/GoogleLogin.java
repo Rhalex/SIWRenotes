@@ -59,7 +59,7 @@ public class GoogleLogin extends HttpServlet {
 			//session.setAttribute("Nome", user.getUsername());
 			
 			session.setAttribute("userSession", user);
-			request.getRequestDispatcher("adList.jsp").forward(request, response);
+			request.getRequestDispatcher("ViewAdList").forward(request, response);
 				
 		}
 		else
@@ -67,6 +67,7 @@ public class GoogleLogin extends HttpServlet {
 			HttpSession session = request.getSession();
 			Cart cart = user.getCart();
 			cart.setAds(DBManager.getInstance().getCartDao().listOfAds(cart));
+			cart.setBundles(DBManager.getInstance().getCartDao().listOfBundles(cart));
 			cart.setTotal(cart.getTotal());
 			DBManager.getInstance().getCartDao().update(cart);
 			
@@ -78,8 +79,8 @@ public class GoogleLogin extends HttpServlet {
 			session.setAttribute("userSession", user);
 //			session.setAttribute("Mail", mail);
 //			session.setAttribute("Nome", user.getUsername());
-			session.setAttribute("userSession", user);
-			request.getRequestDispatcher("adList.jsp").forward(request, response);
+			//session.setAttribute("userSession", user);
+			request.getRequestDispatcher("ViewAdList").forward(request, response);
 		}
 		
 	}

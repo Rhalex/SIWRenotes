@@ -194,6 +194,7 @@
 			          		<c:set var = "cont" scope = "request" value ="${0}" />
 							<c:forEach items="${adsMR}" var="ad">
 								<c:if test="${ cont % 3 == 0}">
+									</div>
 			        				<div class="row features-small mt-5 wow fadeIn" align="center">
 			        			</c:if>
 			
@@ -216,7 +217,7 @@
 						              
 					        		<c:set var = "cont" scope = "request" value ="${cont+1}" />
 									<c:if test="${ cont % 3 == 0}">
-										</div>
+										
 										<!--/First row-->
 									</c:if>
 					    		</c:forEach>
@@ -224,11 +225,13 @@
 						</c:if>
 						<c:if test="${valueAds != null}">
 							<span class="h5 mx-5">Le inserzioni migliori:</span>
+							<div class=" my-5" >
 							<div class="row features-small mt-5 wow fadeIn" align="center">
 						          <!--Grid column-->
 						          <c:set var = "cont2" scope = "request" value ="${0}" />
 								  <c:forEach items="${valueAds}" var="ad">
 									<c:if test="${ cont2 % 3 == 0}">
+										</div>
 				        				<div class="row features-small mt-5 wow fadeIn" align="center">
 				        			</c:if>
 				        			

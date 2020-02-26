@@ -331,7 +331,7 @@
 			data: JSON.stringify(profile.getEmail()),
 			success: function(data)
 			{
-        		window.location.replace("http://localhost:8080/it.unical.ingsw.siw.renotes/adList.jsp");
+        		window.location.replace("http://localhost:8080/it.unical.ingsw.siw.renotes/ViewAdList");
 			},
 			error: function()
 			{

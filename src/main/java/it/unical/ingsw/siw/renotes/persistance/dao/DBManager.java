@@ -37,8 +37,8 @@ public class DBManager {
 		try {
 			Class.forName("org.postgresql.Driver").newInstance();
 			//questi vanno messi in file di configurazione!!!	
-			dataSource=new DataSource("jdbc:postgresql://manny.db.elephantsql.com:5432/nzxxsfok","nzxxsfok","5JTu5JBBv9l17WPT1rFhHHpp2OAZ4iuY");
-			//dataSource=new DataSource("jdbc:postgresql://localhost:5432/ReNotesLocal","postgres","postgres");
+			//dataSource=new DataSource("jdbc:postgresql://manny.db.elephantsql.com:5432/nzxxsfok","nzxxsfok","5JTu5JBBv9l17WPT1rFhHHpp2OAZ4iuY");
+			dataSource=new DataSource("jdbc:postgresql://localhost:5432/ReNotesLocal","postgres","postgres");
 
 		} 
 		catch (Exception e) {
