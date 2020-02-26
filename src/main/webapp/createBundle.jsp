@@ -52,14 +52,17 @@
 							<div class="col-sm-3">
 								 <img type="image" src="${ad.getPreview().getImage()}" class="img-square img-thumbnail" alt="avatar">
 							</div>
-							<div class="col-sm-2 mx-2" align="left" >
-								<p><font color="white"><h2 class="text-truncate text-white" name="adTitle" ><strong>${ad.getTitle()}</strong></h2></font></p>
-								<p><font color="#EB1B1F"><h5 name="adPrezzo" id="prezzoAd">${ad.getPrice()} <i class="fas fa-euro-sign"></i></h5></font></p>
+							<div class="col-sm-0 mx-5 text-truncate" align="left" >
+								<p><font color="white"><h2 class="text-truncate text-white text-" name="adTitle" >${ad.getTitle()}</h2></font></p>
+								<p><font color="white"><h4>${ad.getSubject()}</h4></font></p>
+								<p><font color="white"><h4>${ad.getDegreeCourse()}</h4></font></p>
+								<p><font color="white"><h4>${ad.getUniversity()}</h4></font></p>
+								<p><font color="#EB1B1F"><h4 name="adPrezzo" id="prezzoAd">${ad.getPrice()} <i class="fas fa-euro-sign"></i></h4></font></p>
 							</div>
-							<div class="col-sm-3" id="div-button">
+							<div class="col-sm-0 my-5" align="right" >
 									<c:set var = "adId" scope = "request" value ="${adId + 1}" />
 									
-									<label><h5><font color="white"> Aggiungi al bundle</label></h5></font><input type="checkbox" name="${adId}" id="${adId}" value="${ad.getId()}">
+									<label><h4>Aggiungi al bundle <input type="checkbox" name="${adId}" id="${adId}" value="${ad.getId()}"></h4></label>
 								<div></div>
 							</div>
 						</div>
@@ -67,7 +70,7 @@
 					</c:forEach>
 					<textarea name="adIdMax" hidden >${adId}</textarea>
 			    </div><!--/row-->
-			<hr>	 
+				 
 		</div>
 		<div align="right">
 			<label for="Prezzo"><h4>Prezzo del Bundle:</h4>

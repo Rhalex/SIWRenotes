@@ -18,7 +18,7 @@ public class LogoutServlet extends HttpServlet {
 		
 		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 		{	
-			System.out.println("contattata");
+			
 			request.getSession().invalidate();
 			request.getRequestDispatcher("index.jsp").forward(request, response);
 		}

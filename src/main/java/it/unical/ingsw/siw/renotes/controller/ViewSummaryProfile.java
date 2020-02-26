@@ -36,7 +36,7 @@ public class ViewSummaryProfile extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		//User user = (User) req.getSession().getAttribute("userSession");
-		System.out.println(user.getUsername());
+		
 		//RECUPERO LE INSERZIONI CHE HA MESSO IN VENDITA
 		List<Ad> adsManaged = DBManager.getInstance().getUserDao().findManagedAd(user);
 		List<Double> valueReviews = new ArrayList<Double>();

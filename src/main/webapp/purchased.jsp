@@ -32,31 +32,32 @@
     	</c:if>
     	
     	<c:if test="${ads != null}">
-			<div align="center" class=" my-5">
+			<div class=" my-5">
 				<!--First row-->
-	       
+	       			<hr>
 					<c:forEach items="${ads}" var="ad">
-						<hr>
-		   				 <div class="row">
+						
+						<div class="row">
 							<div id="rounded-div">
-								<div class="col-sm-3">
+								<div class="col-sm-3" align="left">
 								<a href="GetAdInfo?adIdByList=${ad.getId()}&viewButton=false"><input type="image" src="${ad.getPreview().getImage()}" class="img-square img-thumbnail" alt="avatar"></a>
 								</div>
 							
-								<div class="col-sm-2">
-									<p><font color="white"><h1 class="text-truncate text-white"><strong>${ad.getTitle()}</strong></h1></font></p>
+								<div class="col-sm-0 mx-5 text-truncate" align="left">
+									<p><font color="white"><h2 class="text-truncate text-white"><strong>${ad.getTitle()}</strong></h2></font></p>
 									<p><font color="white"><h4>${ad.getSubject()}</h4></font></p>
 									<p><font color="white"><h4>${ad.getDegreeCourse() }</h4></font></p>
 									<p><font color="white"><h4>${ad.getUniversity() } </h4></font></p>
 								</div>
-								<div class="col-sm-1" id="div-button">
+								<div class="col-sm-0" align="right">
 									<a class="btn btn-lg btn-success" href="${ad.getFile()}">Apri</a>
 								</div>
-		   				 </div><!--/row-->
-		   				 </div>
+		   					 </div><!--/row-->
+		   				</div>
 						<hr>
 	    			</c:forEach>
-	    			</div>
+    			</div>
+   			 
 	     </c:if>
 		</div>
 </div>

@@ -32,7 +32,6 @@ public class CreateBundle extends HttpServlet {
 		}
 		
 		
-		System.out.println(ads.get(0).getPreview().getImage());
 		if(ads.size()>0)
 			req.setAttribute("ads", ads);
 		

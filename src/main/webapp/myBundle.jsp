@@ -32,19 +32,17 @@
 						<div class="col-sm-3" align="left">
 							<a href="GetBundleInfo?bundleId=${bundle.getBundle_id()}&viewButton=false"><img type="image" src="${bundle.getImage()}"  name="adImage" class="img-square img-thumbnail" alt=""></a>
 						</div>
-						<div class="col-sm-4 mx-2" align="left" >
-							<p><font color="white"><h4 class="text-truncate text-white" name="bundleTitle" ><strong>${bundle.getTitle()}</strong></h4></font></p>
+						<div class="col-sm-4 " align="left" >
+							<p><font color="white"><h3 class="text-truncate text-white" name="bundleTitle" ><strong>${bundle.getTitle()}</strong></h3></font></p>
 							<c:forEach items="${bundle.getAds()}" var="ad">
 								<p><a href="GetAdInfo?adIdByList=${ad.getId()}&viewButton=false" ><font color="white"><h5 name="adTitle1">${ad.getTitle()}</h5></font></a></p>
 							</c:forEach>
-							<p><font color="#EB1B1F"><h5 name="adPrezzo">${bundle.getPrice()} <i class="fas fa-euro-sign"></i></h5></font></p>
+							<p><font color="#EB1B1F"><h4 name="adPrezzo">${bundle.getPrice()} <i class="fas fa-euro-sign"></i></h4></font></p>
 						</div>
 						
-						<div class="col-sm-3" id=" botton-padding" >
+						<div class="col-sm-9 panel-collapse" id=" botton-padding" align="right">
 							<label class="text-center">
-								<br>
-								<br>
-								<br>
+		
 								<form action="RemoveMyBundle" method="get">
 									<button type="submit"  class="btn btn-lg btn-danger my-5" name="bundleId" value="${bundle.getBundle_id()}">Rimuovi</button>
 								</form>

@@ -46,6 +46,7 @@
 	        	<c:set var = "cont" scope = "request" value ="${0}" />
 					<c:forEach items="${ads}" var="ad">
 						<c:if test="${ cont % 3 == 0}">
+							
 	        				<div class="row features-small mt-5 wow fadeIn">
 	        			</c:if>
 	
@@ -75,7 +76,7 @@
 					</c:if>
 	    	</c:forEach>
 	    	
-	    	<c:set var = "cont7" scope = "request" value ="${0}" />
+	    	<c:set var = "cont7" scope = "request" value ="${cont}" />
 	    		 <c:forEach items="${bundles}" var="bundle">
 	    		 	<c:if test="${ cont7 % 3 == 0}">
         				<div class="row features-small mt-5 wow fadeIn">
@@ -90,6 +91,7 @@
 					  			<span><a href="GetBundleInfo?bundleId=${bundle.getBundle_id()}&viewButton=false"><img src="${bundle.getImage()}" height="200" width="200" alt="img" ></img></a></span>
 				
 	                  			<h5 class="feature-title font-bold mb-1 text-truncate">${bundle.getTitle()}</h5>
+	                  			<p><br></p>
 								<span><a href="ManageCart?bundleIdRemove=${bundle.getBundle_id() }"><input type="submit" class="btn bg-danger btn-md text-white font-weight-bold" value="Rimuovi"/></a></span>
 								
 							</div>
@@ -106,13 +108,13 @@
 	     </c:if>
       <!--Section: More-->
       		
-	 		<c:if test="${ cont % 3 != 0}">
+	 		<c:if test="${ (cont7) % 3 != 0}">
 				</div>
 			</c:if>
-	 		<c:if test="${ cont7 % 3 != 0}">
+	 		<!--<c:if test="${ cont7 % 3 != 0}">
 				</div>
-				<!--/First row-->
-			</c:if>
+				
+			</c:if>-->
 	 		<c:if test="${ads != null || bundles != null}">
 	 			<font color="b00000">		
 					<p class="h4"><span>Totale: ${cart.getTotal()} <a class="fas fa-euro-sign"></a></span></p>

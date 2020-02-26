@@ -27,32 +27,31 @@
     	
     <c:if test="${ads != null}">
     <div align="center" class="my-5">
-    
+    <hr>
     <c:forEach items="${ads}" var="ad">
-		<hr>
+		
 		    <div class="row">
 				<div id="rounded-div">
-					<div class="col-sm-3">
+					<div class="col-sm-3" align="justify">
 						<a href="GetAdInfo?adIdByList=${ad.getId()}&viewButton=false"><img type="image" src="${ad.getPreview().getImage()}"  name="adImage" class="img-square img-thumbnail" alt="avatar"></a>
 					</div>
-					<div class="col-sm-2">
-						<p><font color="white"><h1 class="text-truncate text-white" name="adTitle" ><strong>${ad.getTitle()}</strong></h1></font></p>
+					<div class="col-sm-0 mx-5 text-truncate" align="left">
+						<p><font color="white"><h2 class="text-truncate text-white" name="adTitle" ><strong>${ad.getTitle()}</strong></h2></font></p>
 						<p><font color="white"><h4 name="adSubject">${ad.getSubject()}</h4></font></p>
 						<p><font color="white"><h4 name="adDegreeCourse">${ad.getDegreeCourse() }</h4></font></p>
 						<p><font color="white"><h4 name="adUniversity">${ad.getUniversity() } </h4></font></p>
 					</div>
-					<div class="col-sm-1" id="div-button">
-						<div id="botton-padding">
+					
+					<div class="row col-sm-9">
+					<div class="col-sm-8"></div>
+						<div class="col-sm-2" id="botton-padding" align="right">
 							<form action="ViewModifyAd" method="post">
 								<textarea name="adIdModify" hidden>${ad.getId()}</textarea>
 								<button type="submit" class="btn btn-lg btn-warning">Modifica</button>
 							</form>
 						</div>
-						<div id="botton-padding">
-							<form action="ModifyAdvertisement" method="get">
-								<textarea name="adIdRemove" hidden>${ad.getId()}</textarea>
-								<button type="submit"  class="btn btn-lg btn-danger">Rimuovi</button>
-							</form>
+						<div class="col-sm-2" id="botton-padding" align="right">
+							<a href="ModifyAdvertisement?adIdRemove=${ad.getId()}"><button type="submit"  class="btn btn-lg btn-danger">Rimuovi</button></a>
 						</div>
 					</div>
 				</div>

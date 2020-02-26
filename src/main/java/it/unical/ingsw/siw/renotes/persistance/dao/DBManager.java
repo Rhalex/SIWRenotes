@@ -3,22 +3,10 @@ package it.unical.ingsw.siw.renotes.persistance.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+
 
 import it.unical.ingsw.siw.renotes.model.Ad;
-import it.unical.ingsw.siw.renotes.model.Bundle;
 import it.unical.ingsw.siw.renotes.model.Preview;
-import it.unical.ingsw.siw.renotes.model.User;
 import it.unical.ingsw.siw.renotes.persistance.jdbc.AdDaoJDBC;
 import it.unical.ingsw.siw.renotes.persistance.jdbc.BundleDaoJDBC;
 import it.unical.ingsw.siw.renotes.persistance.jdbc.CartDaoJDBC;
@@ -36,9 +24,9 @@ public class DBManager {
 	static {
 		try {
 			Class.forName("org.postgresql.Driver").newInstance();
-			//questi vanno messi in file di configurazione!!!	
-			//dataSource=new DataSource("jdbc:postgresql://manny.db.elephantsql.com:5432/nzxxsfok","nzxxsfok","5JTu5JBBv9l17WPT1rFhHHpp2OAZ4iuY");
-			dataSource=new DataSource("jdbc:postgresql://localhost:5432/ReNotesLocal","postgres","postgres");
+			
+			dataSource=new DataSource("jdbc:postgresql://manny.db.elephantsql.com:5432/nzxxsfok","nzxxsfok","5JTu5JBBv9l17WPT1rFhHHpp2OAZ4iuY");
+			//dataSource=new DataSource("jdbc:postgresql://localhost:5432/ReNotesLocal","postgres","postgres");
 
 		} 
 		catch (Exception e) {

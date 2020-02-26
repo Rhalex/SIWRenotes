@@ -54,7 +54,7 @@
 					<font color="b00000"><p class=" h4"> ${ad.getPrice()} <a class="fas fa-euro-sign"></a></p></font>
 				  </div>
 	     		 <div class="form-row">
-	     		 	<div class="col-3 my-5 mx-5"> 
+	     		 	<div class="col-4 my-5 mx-5"> 
 				      <label>${ad.getValue()} <a class="fas fa-star text-warning"></a></label>
 					</div>		
 				</div>
