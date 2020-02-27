@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import it.unical.ingsw.siw.renotes.model.Ad;
+import it.unical.ingsw.siw.renotes.model.Bundle;
 import it.unical.ingsw.siw.renotes.model.Cart;
 import it.unical.ingsw.siw.renotes.model.PaymentMethod;
 import it.unical.ingsw.siw.renotes.model.User;
@@ -38,7 +40,8 @@ public RegisterServlet() { super(); }
 			utente.setPassword(PasswordManager.getMD5(request.getParameter("password-registrazione")));
 			Cart cart = new Cart();
 			cart.setId(DBManager.getInstance().getCartDao().lastSerialCartId()+1);
-			
+			cart.setAds(new ArrayList<Ad>());
+			cart.setBundles(new ArrayList<Bundle>());
 			DBManager.getInstance().getCartDao().save(cart);
 			utente.setCart(cart);
 			

@@ -25,7 +25,7 @@ public class ModifyUserImage extends HttpServlet {
 		{
 			HttpSession session = request.getSession();
 			//User user = DBManager.getInstance().getUserDao().findByMail((String)session.getAttribute("Mail"));
-			User user = (User) session.getAttribute("userSessione");
+			User user = (User) session.getAttribute("userSession");
 			
 			DBManager.getInstance().getUserDao().modifyImage(user, "webImg/avatar.png");
 			

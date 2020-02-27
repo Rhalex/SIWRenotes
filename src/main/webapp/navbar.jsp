@@ -4,6 +4,8 @@
 <head>
 <meta charset="utf-8">
 <title>navbar</title>
+<!-- BULMA -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
 <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -34,8 +36,9 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   
    <script type="text/javascript" src="js/javaScriptUtility.js"></script>
+    <script type="text/javascript" src="js/autocomplete.js"></script>
 </head>
-<body>
+<body >
 	<header>
 <!-- NavBar -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
@@ -60,8 +63,8 @@
 			<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-auto my-auto my-md-auto" action="ViewAdList" method="get">
      			<div class="input-group dropdown is-active dropdown-trigger">
 				        <div class="md-form mt-2 mb-2">
-      				 			<input type="text" class="input select" placeholder="Inserisci il Titolo" aria-label="Search" aria-describedby="basic-addon2" name="titolo" id="aTitolo" autocomplete=off />
-							<div class="dropdown-menu" id="dropdown-menu" role="menu"></div>
+      				 			<input oninput="auto()" type="text" class="input select text-white" placeholder="Inserisci il Titolo" aria-label="Search" aria-describedby="basic-addon2" name="titolo" id="aTitolo" autocomplete=off />
+							<div id="dropdown-menu" role="menu"></div>
 							
 					</div>
       			</div>
@@ -89,56 +92,6 @@
 
     </div>
   </nav>
- <script>
- $( "#aTitolo" ).keyup(function() {
-		var value = $.value;
-		if (value==null){
-			if(document.getElementById("suggestion"))
-    		{document.getElementById("suggestion").remove()};
-    		return '';
-		};
-	});
-		var xhr;
-		var suggestValue;
-		$('input[name="titolo"]').autoComplete({
-			minChars: 1,
-			cache: false,
-		    source: function(term, response){
-		        xhr = $.getJSON('Autocomplete', { titolo: term }, function(data){ response(data); });
-		        suggestValue = $.textContent; 
-		       	if(suggestValue == null){
-		       		if(document.getElementById("suggestion"))
-		       		{document.getElementById("suggestion").remove()};
-		       		return '';
-		       	}
-		    },
-		     /* _renderMenu: function( ul, items ) {
-		    	  var that = this;
-		    	  $.each( items, function( index, item ) {
-		    	    that._renderItemData( ul, item );
-		    	  });
-		    	} */
-		    renderItem: function (item, search){
-				
-		    	if(document.getElementById("suggestion"))
-		    		{document.getElementById("suggestion").remove()};
-		    		
-		    	var t = document.createElement("div");
-		    	t.id = "suggestion";
-		    	t.className += "dropdown-item";
-		    	t.append(item);
-		    	document.getElementById("dropdown-menu").append(t);
-		    	var god =  document.getElementById("dropdown-menu");
-		    	console.log(god);
-		    	return '';
-		    	
-		    }
-		});
-		$(document).on('click', "[id^='suggestion']", function () {
-			document.getElementById("aTitolo").value = document.getElementById("suggestion").textContent;
-			document.getElementById("suggestion").remove();
-		});
- </script>
   <!-- Navbar -->
 
 </header>

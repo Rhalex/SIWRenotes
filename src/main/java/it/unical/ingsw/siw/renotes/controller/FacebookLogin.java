@@ -22,13 +22,11 @@ import it.unical.ingsw.siw.renotes.persistance.dao.DBManager;
 import it.unical.ingsw.siw.renotes.utility.EmailManager;
 import it.unical.ingsw.siw.renotes.utility.PasswordManager;
 
-
-public class GoogleLogin extends HttpServlet {
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{	
-		
-		JsonElement json = new Gson().fromJson(request.getReader(), JsonElement.class);
+public class FacebookLogin extends HttpServlet {
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		JsonElement json = new Gson().fromJson(req.getReader(), JsonElement.class);
 		String mail = json.toString();
 		mail = mail.substring(1, mail.length() - 1);
 		
@@ -38,7 +36,7 @@ public class GoogleLogin extends HttpServlet {
 			user = new User();
 			user.setMail(mail);
 			user.setUsername(mail);
-			user.setPassword(PasswordManager.getMD5("default"));
+			user.setPassword(PasswordManager.getMD5("fb"));
 			Cart cart = new Cart();
 			cart.setId(DBManager.getInstance().getCartDao().lastSerialCartId()+1);
 			cart.setAds(new ArrayList<Ad>());
@@ -57,17 +55,15 @@ public class GoogleLogin extends HttpServlet {
 			user.setPaymentMethods(pms);
 			
 			EmailManager.registerValidation(user);
-			HttpSession session = request.getSession();
-			//session.setAttribute("Mail", mail);
-			//session.setAttribute("Nome", user.getUsername());
+			HttpSession session = req.getSession();
 			
 			session.setAttribute("userSession", user);
-			request.getRequestDispatcher("ViewAdList").forward(request, response);
+			//req.getRequestDispatcher("ViewAdList").forward(req, resp);
 				
 		}
 		else
 		{
-			HttpSession session = request.getSession();
+			HttpSession session = req.getSession();
 			Cart cart = user.getCart();
 			cart.setAds(DBManager.getInstance().getCartDao().listOfAds(cart));
 			cart.setBundles(DBManager.getInstance().getCartDao().listOfBundles(cart));
@@ -80,11 +76,8 @@ public class GoogleLogin extends HttpServlet {
 			user.setPaymentMethods(paymentMethods);
 			
 			session.setAttribute("userSession", user);
-//			session.setAttribute("Mail", mail);
-//			session.setAttribute("Nome", user.getUsername());
-			//session.setAttribute("userSession", user);
-			request.getRequestDispatcher("ViewAdList").forward(request, response);
+			//req.getRequestDispatcher("ViewAdList").forward(req, resp);
 		}
-		
 	}
+
 }

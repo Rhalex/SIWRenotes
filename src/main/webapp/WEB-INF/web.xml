@@ -304,6 +304,16 @@
   		<url-pattern>/ViewSummaryProfile</url-pattern>
 	 </servlet-mapping>
 	 
+	 <servlet>
+  		<servlet-name>FacebookLogin</servlet-name>
+  		<servlet-class>it.unical.ingsw.siw.renotes.controller.FacebookLogin</servlet-class>
+ 	 </servlet>
+	 
+	<servlet-mapping>
+ 	 	<servlet-name>FacebookLogin</servlet-name>
+  		<url-pattern>/FacebookLogin</url-pattern>
+	 </servlet-mapping>
+	 
 </web-app>
 
 

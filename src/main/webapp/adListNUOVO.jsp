@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>AdList</title>
+  <!-- BULMA -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <!-- Bootstrap core CSS -->
@@ -37,10 +39,11 @@
   <script type="text/javascript" src="js/mdb.min.js"></script>
   
    <script type="text/javascript" src="js/javaScriptUtility.js"></script>
+   <script type="text/javascript" src="js/autocomplete.js"></script>
   <!-- Initializations -->
 </head>
 
-<body>
+<body >
 <!-- Header content -->
 	<header>
 <!-- NavBar -->
@@ -66,9 +69,9 @@
 			<form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-auto my-auto my-md-auto">
      			<div class="input-group dropdown is-active dropdown-trigger">
 				        <div class="md-form mt-2 mb-2">
-      				 		<input type="text" class="input select" placeholder="Inserisci il Titolo" aria-label="Search" aria-describedby="basic-addon2" name="titolo" id="aTitolo" autocomplete=off form="searchForm" />
-							<div class="dropdown-menu" role="menu"></div>
-							<div class="dropdown-item" id="dropdown-menu"></div>
+      				 		<input type="text" class="input select text-white" placeholder="Inserisci il Titolo" aria-label="Search" aria-describedby="basic-addon2" name="titolo" id="aTitolo" oninput="auto('aTitolo','dropdown-menu','suggestion','titolo')"autocomplete=off form="searchForm" />
+							<div  id="dropdown-menu" role="menu"></div>
+							
 					</div>
       			</div>
 			</form>
@@ -95,54 +98,7 @@
 
     </div>
   </nav>
- <script>
- $( "#aTitolo" ).keyup(function() {
-		var value = $.value;
-		if (value==null){
-			if(document.getElementById("suggestion"))
-    		{document.getElementById("suggestion").remove()};
-    		return '';
-		};
-	});
-		var xhr;
-		var suggestValue;
-		$('input[name="titolo"]').autoComplete({
-			minChars: 1,
-			cache: false,
-		    source: function(term, response){
-		        xhr = $.getJSON('Autocomplete', { titolo: term }, function(data){ response(data); });
-		        suggestValue = $.textContent; 
-		       	if(suggestValue == null){
-		       		if(document.getElementById("suggestion"))
-		       		{document.getElementById("suggestion").remove()};
-		       		return '';
-		       	}
-		    }
-		   /*  _renderMenu: function( ul, items ) {
-		    	  var that = this;
-		    	  $.each( items, function( index, item ) {
-		    	    that._renderItemData( ul, item );
-		    	  });
-		    	} */
-		    /* renderItem: function (item, search){
-				
-		    	if(document.getElementById("suggestion"))
-		    		{document.getElementById("suggestion").remove()};
-		    		
-		    	var t = document.createElement("option");
-		    	t.id = "suggestion";
-		    	t.className += "dropdown-menu";
-		    	t.append(item);
-		    	document.getElementById("dropdown-menu").append(t);
-		    	return '';
-		    	
-		    } */
-		});
-		$(document).on('click', "[id^='suggestion']", function () {
-			document.getElementById("aTitolo").value = document.getElementById("suggestion").textContent;
-			document.getElementById("suggestion").remove();
-		});
- </script>
+ 
   <!-- Navbar -->
 
 </header>
@@ -158,21 +114,24 @@
 						<div class="row">
 						<div class="input-group col-3">
 							 <div class="md-form mt-2 mb-2">
-      		 					<input type="text" class="form-control" placeholder="Materia" aria-label="Search" aria-describedby="basic-addon2" name="materia" form="searchForm">
+      		 					<input type="text" class="form-control" placeholder="Materia" aria-label="Search" aria-describedby="basic-addon2" name="materia" id="m" oninput="auto('m','Mmenu','suggestion2')" autocomplete=off >
+								<div  id="Mmenu" role="menu"></div>
 							</div>
 						</div>
 						<div class="input-group col-3">
 							 <div class="md-form mt-2 mb-2">
-      		 					<input type="text" class="form-control" placeholder="Università " aria-label="Search" aria-describedby="basic-addon2" name="universita" form="searchForm">
+      		 					<input type="text" class="form-control" placeholder="Università " aria-label="Search" aria-describedby="basic-addon2" name="universita" id="u" oninput="auto('u','Umenu','suggestion3')" autocomplete=off >
+								<div  id="Umenu" role="menu"></div>
 							</div>
 						</div>
 						<div class="input-group col-3">
 							 <div class="md-form mt-2 mb-2">
-      		 					<input type="text" class="form-control" placeholder="Corso Di Laurea" aria-label="Search" aria-describedby="basic-addon2" name="corsoDiLaurea" form="searchForm">
+      		 					<input type="text" class="form-control" placeholder="Corso Di Laurea" aria-label="Search" aria-describedby="basic-addon2" name="corsoDiLaurea" id="c" oninput="auto('c','Cmenu','suggestion4')" autocomplete=off >
+								<div  id="Cmenu" role="menu"></div>
 							</div>
 						</div>
 							<div class="col-3">
-							<input type="submit" class="btn bg-success btn-md text-white font-weight-bold" value="Ricerca"/>
+							<input type="submit" class="btn bg-success btn-md text-white font-weight-bold" value="Ricerca" hidden/>
 							</div>
 						</div>
 							

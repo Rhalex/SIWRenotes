@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Renotes login</title>
+  
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <meta name="google-signin-client_id" content="263763617027-i5vlk7ff7c7snr3r4iig9q31be5acm34.apps.googleusercontent.com">
@@ -20,7 +21,8 @@
   <!-- Your custom styles (optional) -->
   <link href="bootstrap2/css/style.min.css" rel="stylesheet" >
   <link href="bootstrap2/css/custom.css" rel="stylesheet" >
-
+  <script src="js/fb.js"></script>
+  <script src="js/google.js"></script>
 </head>
 
 <body>
@@ -87,8 +89,12 @@
                       <pre></pre> 	
 				  	  <div class="g-signin2" id="centered-button" data-onsuccess="onSignIn"></div>
 				  	  <pre></pre>
-				  	  <div class="fb-login-button" data-size="medium" data-button-type="continue_with" data-auto-logout-link="false" data-use-continue-as="false"></div>
-                    </div>
+				  	  <div class="fb-login-button" style="height: 40px; width: 275px; margin-left: 5px;" add target="_blank" data-max-rows="1"
+							data-size="large" data-button-type="continue_with"  data-width="267"
+							data-show-faces="false" data-auto-logout-link="false"
+							data-use-continue-as="false" scope="public_profile,email"
+							onlogin="checkLoginState('ViewAdList');" add target="_blank">
+				</div></div>
                    </div>
 
               </form>
@@ -316,88 +322,7 @@
     // Animations initialization
     new WOW().init();
   </script>
-
-<script>
-	function onSignIn(googleUser) 
-	{
-		var profile = googleUser.getBasicProfile();
-    console.log(profile.getEmail());
-    var dati = [profile.getEmail(), profile.getName()];
-		$.ajax({
-			url: "GoogleLogin",
-			type: "POST",
-			async: true,
-			contentType: "application/json",
-			data: JSON.stringify(profile.getEmail()),
-			success: function(data)
-			{
-        		window.location.replace("http://localhost:8080/it.unical.ingsw.siw.renotes/ViewAdList");
-			},
-			error: function()
-			{
-				alert("Impossibile effettuare il login");
-			}
-		});
-
-		  /*var profile = googleUser.getBasicProfile();
-		  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-		  console.log('Name: ' + profile.getName());
-		  console.log('Image URL: ' + profile.getImageUrl());
-		  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-		  */
-	}
 	
-	  function signOut() {
-	    var auth2 = gapi.auth2.getAuthInstance();
-	    auth2.signOut().then(function () {
-	      console.log('User signed out.');
-	    });
-	  }
-	</script>
-
-<script>window.fbAsyncInit = function() {
-  FB.init({
-      appId      : '179061136835560',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v5.0'
-    });
-      
-    FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-    });  
-      
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "https://connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-  
-  function statusChangeCallback(response){
-    if(response.status==='connected'){
-      console.log('connesso');
-      }else{
-        console.log('disconnesso');
-      }
-  
-}
-
-  function checkLoginState() {
-    FB.getLoginStatus(function(response) {
-      statusChangeCallback(response);
-    });
-  }
-  
-  function logout() {
-  FB.logout(function(respons) {
-  })
-}
-</script>
-
 </body>
   <script type="text/JavaScript" src="bootstrap2/js/index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
